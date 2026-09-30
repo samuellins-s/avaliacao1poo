@@ -89,6 +89,14 @@ class Medicamento:
         date_object = date.fromisoformat(data_string)
         return cls(nome, lote, date_object, int(quantidade), float(valor))
 
+    @staticmethod
+    def dias_para_vencer(date: object) -> int:
+        date_hoje = date.today()
+
+        quantidade_dias_vencer = date - date_hoje
+
+        return quantidade_dias_vencer.days
+
 
 # main program
 if __name__ == '__main__':
@@ -96,6 +104,8 @@ if __name__ == '__main__':
     m2 = Medicamento.de_registro("Amoxicilina 500mg;L2026B;2026-10-15;40;18.90")
     print(m1)
     print(m2)
+
+    print(f"Dias para vencer de m2: {Medicamento.dias_para_vencer(m2.validade)}")
 
     m1.dispensar(3)
     print(m1)
