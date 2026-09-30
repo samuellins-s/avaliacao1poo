@@ -75,3 +75,11 @@ class Medicamento:
 
     def repor(self, quantidade: int):
         ...
+
+    @classmethod
+    def de_registro(cls, remedio: str) -> object:
+        nome,lote,validade,quantidade,valor = remedio.split(";")
+        data_string = validade
+        date_object = date.fromisoformat(data_string)
+        return cls(nome, lote, date_object, int(quantidade), float(valor))
+    
