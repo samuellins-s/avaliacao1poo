@@ -89,6 +89,7 @@ class Medicamento:
         date_object = date.fromisoformat(data_string)
         return cls(nome, lote, date_object, int(quantidade), float(valor))
 
+    # staticmethod
     @staticmethod
     def dias_para_vencer(date: object) -> int:
         date_hoje = date.today()
