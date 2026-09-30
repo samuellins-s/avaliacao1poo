@@ -100,6 +100,8 @@ class Medicamento:
 
 # teste no main program
 if __name__ == '__main__':
+
+    print('LEIA OS COMENTÁRIOS, PROFESSOR\n')
     m1 = Medicamento("Dipirona 500mg", "L2026A", date(2026, 12, 31), 100, 12.50)
     m2 = Medicamento.de_registro("Amoxicilina 500mg;L2026B;2026-10-15;40;18.90")
 
@@ -119,13 +121,14 @@ if __name__ == '__main__':
         print(f"Erro esperado: {erro}")
 
     vencido = Medicamento("Soro Fisiológico", "L2025X", date(2025, 1, 10), 10, 5.0)
-    
+
     try:
         vencido.dispensar(1)
     except MedicamentoVencidoError as erro:
         print(f"Erro esperado: {erro}")
 
     try:
+        # ATENCAO   
         # como o atributo quantidade é zero na criação do objeto, lançara a exceceçao ValueError e pulará todo o try except
         # quando o atributo quantidade é maior que zero, fará o __eq__ e __lt__ dentro do bloco do try except
 
