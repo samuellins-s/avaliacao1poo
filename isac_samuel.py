@@ -20,22 +20,22 @@ class Medicamento:
         self.quantidade = quantidade
         self.valor = valor
 
-@property
-def quantidade(self):
-    return self._quantidade
+    @property
+    def quantidade(self):
+        return self._quantidade
 
-@quantidade.setter
-def quantidade(self, valor):
-    if valor < 0:
-        raise ValueError('Digite uma quantidade maior que zero (0)')
-    self._quantidade = valor
+    @quantidade.setter
+    def quantidade(self, valor):
+        if valor < 0:
+            raise ValueError('Digite uma quantidade maior que zero (0)')
+        self._quantidade = valor
 
-@property
-def valor(self):
-    return self._valor
+    @property
+    def valor(self):
+        return self._valor
 
-@valor.setter
-def valor(self, valor):
-    if valor < 0:
-        raise ValueError('Digite uma quantidade maior que zero (0)')
-    self._valor = valor 
+    @valor.setter
+    def valor(self, valor):
+        if valor < 0:
+            raise ValueError('Digite uma quantidade maior que zero (0)')
+        self._valor = valor 
