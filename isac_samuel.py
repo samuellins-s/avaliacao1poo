@@ -24,22 +24,22 @@ class Medicamento:
 
     # getters e setters atrib quantidade
     @property
-    def quantidade(self):
+    def quantidade(self) -> int:
         return self._quantidade
 
     @quantidade.setter
-    def quantidade(self, valor):
+    def quantidade(self, valor: int) -> None:
         if valor <= 0:
             raise ValueError('Digite uma quantidade maior que zero (0)')
         self._quantidade = valor
 
     # getters e setters atrib valor
     @property
-    def valor(self):
+    def valor(self) -> float:
         return self._valor
 
     @valor.setter
-    def valor(self, valor):
+    def valor(self, valor: float) -> None:
         if valor <= 0:
             raise ValueError('Digite um valor maior que zero (0)')
         self._valor = valor
@@ -75,7 +75,7 @@ class Medicamento:
         else:
             self._quantidade -= quantidade
 
-    def repor(self, quantidade: int):
+    def repor(self, quantidade: int) -> None:
         if quantidade <= 0:
             raise QuantidadeInvalidaError('Digite uma quantidade maior que zero (0)')
             
